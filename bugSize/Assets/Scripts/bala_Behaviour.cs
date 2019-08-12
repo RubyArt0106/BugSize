@@ -5,7 +5,7 @@ using UnityEngine;
 public class bala_Behaviour : MonoBehaviour
 {
     public int damage;
-
+    public GameObject impacto;
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {//Llama al script
         enemy_Life enemy = hitInfo.GetComponent<enemy_Life>();
@@ -13,6 +13,7 @@ public class bala_Behaviour : MonoBehaviour
         {
             enemy.TakeDamage(damage);
         }
+        Instantiate(impacto, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

@@ -10,7 +10,7 @@ public class enemy_Life : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        health -= health;
+        health -= damage;
         if(health <= 0)
         {
             Muere();
