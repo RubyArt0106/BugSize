@@ -7,9 +7,12 @@ public class ctrl_disparar : MonoBehaviour
     public GameObject mirilla;
     public GameObject weapon;
     public GameObject bullet;
-    public GameObject bulletStart;
     public float bulletSpeed;
     private Vector3 target;
+
+    public Transform bulletPoint;
+    private float tempoEntreDisparo;
+    public float iniTempoEntreDisparo;
     /*___________Start________*/
     void Start()
     {
@@ -27,29 +30,29 @@ public class ctrl_disparar : MonoBehaviour
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         weapon.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
         //Dispara
-        if (Input.GetMouseButtonDown(0))
+        if (tempoEntreDisparo <= 0)
         {
-            float distance = difference.magnitude;
-            Vector2 direction = difference / distance;
-            direction.Normalize();
-            fireBullet(direction, rotationZ);
+            if (Input.GetMouseButtonDown(0))
+            {
+                float distance = difference.magnitude;
+                Vector2 direction = difference / distance;
+                direction.Normalize();
+                fireBullet(direction, rotationZ);
+                tempoEntreDisparo = iniTempoEntreDisparo;
+            }
         }
-        
+        else
+        {
+            tempoEntreDisparo -= Time.deltaTime;
+        }
     }/*_______Update___________*/
 
     /*________Disparar_________*/
     void fireBullet(Vector2 direction, float rotationZ)
     {
         GameObject b = Instantiate(bullet) as GameObject;
-        b.transform.position = bulletStart.transform.position;
+        b.transform.position = bulletPoint.transform.position;
         b.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
     }/*________Disparar_________*/
-
-    /*________Disparar_________*/
-    void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        Debug.Log(hitInfo.name);
-        Destroy(gameObject);
-    }
 }
