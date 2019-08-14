@@ -55,8 +55,14 @@ TagManager:
   - name: Player
     uniqueID: 417381869
     locked: 0
-  - name: Enemy
+  - name: Enemy_1
     uniqueID: 3194368849
+    locked: 0
+  - name: Enemy_2
+    uniqueID: 2342583521
+    locked: 0
+  - name: Enemy_3
+    uniqueID: 3227709261
     locked: 0
   - name: Brazo_Der
     uniqueID: 1996897101

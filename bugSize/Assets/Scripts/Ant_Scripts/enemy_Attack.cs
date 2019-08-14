@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemy_Attack : MonoBehaviour
 {
-
+    public int damageGiven;
     public GameObject aCheck;
     private Animator anim;
     void Start()
@@ -16,8 +16,13 @@ public class enemy_Attack : MonoBehaviour
     {
         if (col.gameObject.name.Equals("Player"))
         {
-            Debug.Log("Attack_true");
-            anim.SetBool("isAttack", true);
+            player_Life player = col.GetComponent<player_Life>();
+            if (player != null)
+            {
+                Debug.Log("Attack_true");
+                anim.SetBool("isAttack", true);
+                player.TakeDamage(damageGiven);
+            }
         }
         
     }

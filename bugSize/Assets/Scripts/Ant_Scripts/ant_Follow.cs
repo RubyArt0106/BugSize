@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Code by Alex_Romaja
-public class Enemy_follow : MonoBehaviour
+
+public class ant_Follow : MonoBehaviour
 {
     public float speed;
     bool der = true;
