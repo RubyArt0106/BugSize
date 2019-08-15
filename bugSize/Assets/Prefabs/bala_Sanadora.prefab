@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4446717790332103696}
   - component: {fileID: 7252688382511065410}
   - component: {fileID: 471763736}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: bala_Sanadora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
