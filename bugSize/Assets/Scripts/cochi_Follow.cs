@@ -69,9 +69,12 @@ public class cochi_Follow : MonoBehaviour
             }
         }
     }
-
-
-
+    /**
+    public void Rollstatus(bool )
+    {
+        isRolling ==
+    }
+    **/
 
 
 
