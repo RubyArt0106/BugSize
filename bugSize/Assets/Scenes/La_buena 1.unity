@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &12723120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb9ac879e12d4643a2da63cc376b4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageGiven: 0
+  damageGiven: 1
   aCheck: {fileID: 2081356302}
 --- !u!1 &127525676
 GameObject:
@@ -660,7 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 515248679}
   - component: {fileID: 515248680}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Mira
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,8 +675,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515248678}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00039958954, y: -0.14429998, z: 0}
-  m_LocalScale: {x: -0.58328813, y: 2.6509576, z: 1}
+  m_LocalPosition: {x: 0.77, y: -8.41, z: 0}
+  m_LocalScale: {x: -0.50512755, y: 2.2106361, z: 1}
   m_Children: []
   m_Father: {fileID: 1346876478}
   m_RootOrder: 0
@@ -948,7 +948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &910055140
 Rigidbody2D:
   serializedVersion: 4
@@ -1459,7 +1459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1346876478}
   - component: {fileID: 1346876479}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: distance_checker
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -1473,14 +1473,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346876477}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.84, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 5.97, y: -1.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 515248679}
   m_Father: {fileID: 910055142}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!70 &1346876479
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1494,8 +1494,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.08074522}
-  m_Size: {x: 0.5, y: 2.453414}
+  m_Offset: {x: 1.0478868, y: -2.7397985}
+  m_Size: {x: 2.5957584, y: 14.725576}
   m_Direction: 0
 --- !u!1 &1438304564
 GameObject:
@@ -79350,7 +79350,7 @@ GameObject:
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1868943943
 Transform:
   m_ObjectHideFlags: 0

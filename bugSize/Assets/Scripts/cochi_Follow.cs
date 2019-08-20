@@ -7,7 +7,7 @@ public class cochi_Follow : MonoBehaviour
     public float speed;
     public float rollspeed;
     bool der = true;
-    bool follow = false;
+    bool dentro;
     bool rolls;
 
     public GameObject disCheck;
@@ -23,6 +23,7 @@ public class cochi_Follow : MonoBehaviour
     /*__________Update___________*/
     void Update()
     {
+        
         //Mira al Jugador
         var delta = target.position - transform.position;
         if (delta.x >= 0 && !der)
@@ -42,11 +43,13 @@ public class cochi_Follow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (follow == true && rolls == false)
+        
+        if (dentro== true && rolls == false)
         {//Camina
+            anim.SetBool("isMoving", true);
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-        else if (follow == true && rolls == true)
+        else if (anim.GetBool("isRolling"))
         {//Pelotita
             
             transform.position = Vector2.MoveTowards(transform.position, target.position, (speed * rollspeed) * Time.deltaTime);
@@ -56,25 +59,24 @@ public class cochi_Follow : MonoBehaviour
     {
         if (col.gameObject.name.Equals("Player"))
         {
-            if (follow == false)
-            {
-                anim.SetBool("isMoving", true);
-                follow = true;
-                rolls = false;
-            }
-            else if(follow == true)
+            dentro = true;
+            rolls = false;
+            anim.SetBool("isRolling", false);
+            anim.SetBool("isMoving", true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.name.Equals("Player"))
+        {
+            if (anim.GetBool("isMoving"))
             {
                 rolls = true;
                 anim.SetBool("isRolling", true);
             }
+            dentro = false;
         }
     }
-    /**
-    public void Rollstatus(bool )
-    {
-        isRolling ==
-    }
-    **/
 
 
 
