@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Enemy_Ant
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -24,8 +24,8 @@ TagManager:
   - Enemy
   - Mirilla
   - Forground
-  - cochi_atak
-  - 
+  - Enemy_tak
+  - Explosion
   - 
   - 
   - 
@@ -69,6 +69,9 @@ TagManager:
     locked: 0
   - name: Gun
     uniqueID: 3341766949
+    locked: 0
+  - name: Enemy_Atak
+    uniqueID: 4170456921
     locked: 0
   - name: Mirilla
     uniqueID: 1211782113

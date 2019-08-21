@@ -16,4 +16,10 @@ public class bala_Behaviour : MonoBehaviour
         Instantiate(impacto, transform.position, transform.rotation);
         Destroy(gameObject);
     }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
 }
