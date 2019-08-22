@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Curado
+  - b_Heal
+  - b_Kill
   layers:
   - Default
   - TransparentFX
@@ -54,6 +57,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 417381869
+    locked: 0
+  - name: Cured
+    uniqueID: 3988359909
     locked: 0
   - name: Enemy_1
     uniqueID: 3194368849

@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class ctrl_disparar : MonoBehaviour
 {
+    
+    
+    private float tempoEntreDisparo;
+    private Vector3 target;
+    public Transform bulletPoint;
+
     public GameObject mirilla;
     public GameObject weapon;
-    public GameObject bullet;
+    public GameObject bullet4Cure;
+    public GameObject bullet4Kill;
     public float bulletSpeed;
-    private Vector3 target;
-
-    public Transform bulletPoint;
-    private float tempoEntreDisparo;
     public float iniTempoEntreDisparo;
     /*___________Start________*/
     void Start()
@@ -30,27 +33,43 @@ public class ctrl_disparar : MonoBehaviour
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         weapon.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
         //Dispara
-        if (tempoEntreDisparo <= 0)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
+            if (tempoEntreDisparo <= 0)
             {
                 float distance = difference.magnitude;
                 Vector2 direction = difference / distance;
                 direction.Normalize();
-                fireBullet(direction, rotationZ);
+                fireb2Kill(direction, rotationZ);
                 tempoEntreDisparo = iniTempoEntreDisparo;
             }
+            
         }
         else
         {
             tempoEntreDisparo -= Time.deltaTime;
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            float distance = difference.magnitude;
+            Vector2 direction = difference / distance;
+            direction.Normalize();
+            fireb2Heal(direction, rotationZ);
+        }
+
     }/*_______Update___________*/
 
     /*________Disparar_________*/
-    void fireBullet(Vector2 direction, float rotationZ)
+    void fireb2Kill(Vector2 direction, float rotationZ)
     {
-        GameObject b = Instantiate(bullet) as GameObject;
+        GameObject b = Instantiate(bullet4Kill) as GameObject;
+        b.transform.position = bulletPoint.transform.position;
+        b.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
+        b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+    }
+    void fireb2Heal(Vector2 direction, float rotationZ)
+    {
+        GameObject b = Instantiate(bullet4Cure) as GameObject;
         b.transform.position = bulletPoint.transform.position;
         b.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
